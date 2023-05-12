@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
@@ -23,20 +24,25 @@ public class GameManager : MonoBehaviour
     [Header("Pause")]
     [SerializeField] private GameObject pauseCanvas;
     public bool gameIsPaused;
-    
+
+    [Header("WinGame")]
+    [SerializeField] private GameObject WinCanvas;
+    public bool PlayerWin = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
         mainCanvasBG.SetActive(true);
         pauseCanvas.SetActive(false);
+        WinCanvas.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Escape) && gameStarted)
+        if (Input.GetKeyDown(KeyCode.Escape) && gameStarted && !PlayerWin)
         {
             if (gameIsPaused)
             {
@@ -50,8 +56,18 @@ public class GameManager : MonoBehaviour
     }
 
 
+    public void WinGame()
+    {
+        
+        WinCanvas.SetActive(true);
+        PlayerWin = true;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
+
     public void ResumeGame()
     {
+        Debug.Log("Resume Game");
         gameIsPaused = false;
         pauseCanvas.SetActive(false);
         Cursor.visible = false;
@@ -60,6 +76,7 @@ public class GameManager : MonoBehaviour
 
     public void PauseGame()
     {
+        Debug.Log("show Pause game");
         gameIsPaused = true;
         pauseCanvas.SetActive(true);
         Cursor.visible = true;
@@ -68,6 +85,7 @@ public class GameManager : MonoBehaviour
 
     public void startGame()
     {
+        Debug.Log("Starting Game");
         mainCanvasBG.SetActive(false);
         mainCanvasDirector.Play();
         gameStarted = true;
@@ -75,8 +93,15 @@ public class GameManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
+    public void RestartGame()
+    {
+        Debug.Log("Restarting game");
+        SceneManager.LoadScene("0");
+    }
+
     public void QuitGame()
     {
+        Debug.Log("Quit");
         Application.Quit();
     }
 }
