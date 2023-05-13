@@ -23,7 +23,8 @@ public class PlayerHealth : MonoBehaviour
         if(timer.timeRemaining <= 0)
         {
             Debug.Log("hatch egg");
-            Instantiate(Chicken, transform.position, Quaternion.identity);
+            GameObject newChicken = Instantiate(Chicken, transform.position, Quaternion.identity);
+            newChicken.GetComponent<SpawnNewPlayer>().checkpoint = this.gameObject.GetComponent<PlayerCheckpoint>().LastCheckpoint;
             GameManager.instance.playerIsChicken = true;
             Destroy(gameObject);
         }

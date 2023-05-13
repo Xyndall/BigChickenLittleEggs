@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO.Compression;
 using UnityEngine;
 
 public class playerController : MonoBehaviour
@@ -11,14 +12,26 @@ public class playerController : MonoBehaviour
 
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask ground;
+    [SerializeField] private Transform camFollow;
+
 
     private float xInput;
     private float zInput;
+
+    Vector3 forwardRelativeVerticalInput;
+    Vector3 rightRelativeVerticalInput;
+
 
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
     }
+
+    private void Start()
+    {
+        CameraFindNewPlayer.instance.FindPlayer(camFollow);
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -38,6 +51,18 @@ public class playerController : MonoBehaviour
         xInput = Input.GetAxis("Horizontal");
         zInput = Input.GetAxis("Vertical");
 
+        //testing
+        Vector3 forward = Camera.main.transform.forward;
+        Vector3 right = Camera.main.transform.right;
+        forward.y = 0;
+        right.y = 0;
+        forward = forward.normalized;
+        right = right.normalized;
+
+        forwardRelativeVerticalInput = zInput * forward;
+        rightRelativeVerticalInput = xInput * right;
+
+
         if(Input.GetKeyDown(KeyCode.Space) && isGrounded())
         {
             _rb.AddForce (Vector3.up * jumpForce, ForceMode.Impulse);
@@ -46,11 +71,13 @@ public class playerController : MonoBehaviour
 
     bool isGrounded()
     {
-        return Physics.CheckSphere(groundCheck.position, .1f, ground);
+        return Physics.CheckSphere(groundCheck.position, .3f, ground);
     }
 
     private void Move()
     {
-        _rb.AddForce(new Vector3(xInput, 0f, zInput) * _moveSpeed);
+        Vector3 cameraRelativeMovement = forwardRelativeVerticalInput
+            + rightRelativeVerticalInput;
+        _rb.AddForce(cameraRelativeMovement * _moveSpeed);
     }
 }

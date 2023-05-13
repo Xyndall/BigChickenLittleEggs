@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 4107786691625286}
   - component: {fileID: 33997112534016210}
   - component: {fileID: 23095793385933360}
-  - component: {fileID: 64868831135273328}
-  m_Layer: 0
+  - component: {fileID: 715101092015569578}
+  m_Layer: 6
   m_Name: SM_Prop_Box_Eggplant_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4107786691625286
 Transform:
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64868831135273328
-MeshCollider:
+--- !u!65 &715101092015569578
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +94,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 130eb65885b7284469f333485e9709c5, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.76035106, y: 0.4151997, z: 0.45261508}
+  m_Center: {x: 0, y: 0.20759985, z: 0.0000001564622}

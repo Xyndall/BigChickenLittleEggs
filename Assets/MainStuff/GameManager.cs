@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour
     public bool PlayerWin = false;
 
     [Header("PlayerStuff")]
-    public bool playerIsChicken;
+    public bool playerIsChicken = true;
     [SerializeField] private GameObject GameCanvas;
     [SerializeField] private GameObject musicPlayer;
     [SerializeField] private GameObject PlayerCamera;

@@ -12,6 +12,8 @@ public class SpawnNewPlayer : MonoBehaviour
     public float timeRemaining = 10;
     public bool timerIsRunning = true;
 
+    public GameObject checkpoint;
+
     private void Start()
     {
         timerIsRunning = true;
@@ -46,7 +48,9 @@ public class SpawnNewPlayer : MonoBehaviour
     void spawnNewEgg()
     {
         aSource.PlayOneShot(aclip[1]);
-        Instantiate(Player, playerSpawn.position, Quaternion.identity) ;
+
+        GameObject newPlayer = Instantiate(Player, transform.position, Quaternion.identity);
+        newPlayer.GetComponent<PlayerCheckpoint>().LastCheckpoint = this.checkpoint;
         GameManager.instance.playerIsChicken = false;
     }
 }
