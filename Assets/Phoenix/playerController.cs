@@ -9,6 +9,7 @@ public class playerController : MonoBehaviour
     public float _moveSpeed = 5f;
 
     public float jumpForce = 5f;
+    public float GroundDistance = .5f;
 
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask ground;
@@ -71,8 +72,13 @@ public class playerController : MonoBehaviour
 
     bool isGrounded()
     {
-        return Physics.CheckSphere(groundCheck.position, .3f, ground);
+        return Physics.CheckSphere(groundCheck.position, GroundDistance, ground);
     }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.yellow;
+    //    Gizmos.DrawSphere(groundCheck.position, GroundDistance);
+    //}
 
     private void Move()
     {
