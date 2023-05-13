@@ -29,6 +29,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject WinCanvas;
     public bool PlayerWin = false;
 
+    [Header("PlayerStuff")]
+    public bool playerIsChicken;
+    [SerializeField] private GameObject GameCanvas;
+    [SerializeField] private GameObject musicPlayer;
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +42,7 @@ public class GameManager : MonoBehaviour
         mainCanvasBG.SetActive(true);
         pauseCanvas.SetActive(false);
         WinCanvas.SetActive(false);
+        musicPlayer.SetActive(true);
     }
 
     // Update is called once per frame
@@ -53,16 +60,26 @@ public class GameManager : MonoBehaviour
                 PauseGame();
             }
         }
+
+        if (playerIsChicken)
+        {
+            GameCanvas.SetActive(true);
+        }
+        else
+        {
+            GameCanvas.SetActive(false);
+        }
+
     }
 
 
     public void WinGame()
     {
-        
         WinCanvas.SetActive(true);
         PlayerWin = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
+        musicPlayer.SetActive(false);
     }
 
     public void ResumeGame()
