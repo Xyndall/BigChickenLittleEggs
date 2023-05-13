@@ -36,8 +36,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject GameCanvas;
     [SerializeField] private GameObject musicPlayer;
     [SerializeField] private GameObject PlayerCamera;
+    public GameObject lastPlayerCheckpoint;
+    public GameObject Player;
 
-    
+
 
 
     // Start is called before the first frame update
@@ -82,9 +84,17 @@ public class GameManager : MonoBehaviour
             PlayerCamera.SetActive(true);
             playerIsChicken = true;
             CinematicCamera.SetActive(false);
-
+            gameStarted = true;
         }
 
+    }
+
+    public void RespawnNewEgg()
+    {
+        
+        GameObject newPlayer = Instantiate(Player, lastPlayerCheckpoint.GetComponent<Checkpoint>().checkpointSpawn.position, Quaternion.identity);
+        newPlayer.GetComponent<PlayerCheckpoint>().LastCheckpoint = lastPlayerCheckpoint;
+        GameManager.instance.playerIsChicken = false;
     }
 
     public void SetBoolTimeline()
@@ -125,7 +135,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("Starting Game");
         mainCanvasBG.SetActive(false);
         mainCanvasDirector.Play();
-        gameStarted = true;
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
     }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO.Compression;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class playerController : MonoBehaviour
@@ -9,6 +10,7 @@ public class playerController : MonoBehaviour
     public float _moveSpeed = 5f;
 
     public float jumpForce = 5f;
+    public float GroundDistance = .5f;
 
     [SerializeField] Transform groundCheck;
     [SerializeField] LayerMask ground;
@@ -38,6 +40,8 @@ public class playerController : MonoBehaviour
     {
         //Inputs
         ProccessInputs();
+
+        Debug.DrawRay(groundCheck.position, -Vector3.up * 0.3f, Color.cyan);
     }
 
     private void FixedUpdate()
@@ -71,13 +75,31 @@ public class playerController : MonoBehaviour
 
     bool isGrounded()
     {
-        return Physics.CheckSphere(groundCheck.position, .3f, ground);
+        RaycastHit hit;
+        if (Physics.Raycast(groundCheck.position, -Vector3.up * 0.2f, out hit,0.3f, ground))
+        {
+            
+            
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+
+        
+        //return Physics.CheckSphere(groundCheck.position, GroundDistance, ground);
     }
+    //private void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.yellow;
+    //    Gizmos.DrawSphere(groundCheck.position, GroundDistance);
+    //}
 
     private void Move()
     {
         Vector3 cameraRelativeMovement = forwardRelativeVerticalInput
             + rightRelativeVerticalInput;
-        _rb.AddForce(cameraRelativeMovement * _moveSpeed);
+        _rb.AddForce(cameraRelativeMovement * _moveSpeed * Time.deltaTime, ForceMode.Impulse);
     }
 }

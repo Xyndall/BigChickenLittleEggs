@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpawnNewPlayer : MonoBehaviour
@@ -49,8 +50,9 @@ public class SpawnNewPlayer : MonoBehaviour
     {
         aSource.PlayOneShot(aclip[1]);
 
-        GameObject newPlayer = Instantiate(Player, transform.position, Quaternion.identity);
+        GameObject newPlayer = Instantiate(Player, playerSpawn.position, Quaternion.identity);
         newPlayer.GetComponent<PlayerCheckpoint>().LastCheckpoint = this.checkpoint;
         GameManager.instance.playerIsChicken = false;
+        this.gameObject.GetComponent<SpawnNewPlayer>().enabled = false;
     }
 }

@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 4459872289350108}
   - component: {fileID: 33636024618461290}
   - component: {fileID: 23266091449006110}
-  - component: {fileID: 64163315893285916}
+  - component: {fileID: 5929068973365690706}
   m_Layer: 0
   m_Name: SM_Prop_GrainBag_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4459872289350108
 Transform:
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64163315893285916
-MeshCollider:
+--- !u!65 &5929068973365690706
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +94,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 88743223602a7c84cb83b3238ffbbbed, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.8450195, y: 0.31993717, z: 0.5724591}
+  m_Center: {x: 0, y: 0.005288072, z: 0.0000006109476}

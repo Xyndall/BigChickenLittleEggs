@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 3571019660630846616}
   - component: {fileID: 3571019660630846623}
   - component: {fileID: 3571019660630846620}
+  - component: {fileID: 4976758693108006239}
   - component: {fileID: 3571019660630846618}
   - component: {fileID: 3571019660630846619}
-  - component: {fileID: 240850221452686556}
   - component: {fileID: 7119388774930878475}
   - component: {fileID: 6558044840302745466}
   - component: {fileID: 7848428588579269765}
@@ -92,6 +92,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4976758693108006239
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3571019660630846617}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 98a67425246ea78478d6dba4611379ab, type: 2}
 --- !u!54 &3571019660630846618
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -121,26 +135,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rb: {fileID: 3571019660630846618}
-  _moveSpeed: 1
+  _moveSpeed: 5
   jumpForce: 5
+  GroundDistance: 0.4
   groundCheck: {fileID: 2337852866716621174}
   ground:
     serializedVersion: 2
     m_Bits: 64
   camFollow: {fileID: 3571019661939694308}
---- !u!135 &240850221452686556
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3571019660630846617}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.3937435
-  m_Center: {x: 0, y: 1.4015455, z: 0}
 --- !u!114 &7119388774930878475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,7 +279,7 @@ GameObject:
   m_Layer: 0
   m_Name: Follow_Cam
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -289,7 +291,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3571019661939694309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.25, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -421,7 +423,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6421163880420443315}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

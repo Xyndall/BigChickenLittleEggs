@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 4294949768431968}
   - component: {fileID: 33273854464532138}
   - component: {fileID: 23708110193595154}
-  - component: {fileID: 64115003862507452}
-  m_Layer: 0
+  - component: {fileID: 2182112947135258506}
+  m_Layer: 6
   m_Name: SM_Prop_Fence_Wire_Pole_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4294949768431968
 Transform:
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64115003862507452
-MeshCollider:
+--- !u!65 &2182112947135258506
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +94,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 849a4e653b9580c4bba28400b050f03b, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.29053572, y: 1.7024499, z: 0.29053497}
+  m_Center: {x: 0, y: 0.5131225, z: 0}

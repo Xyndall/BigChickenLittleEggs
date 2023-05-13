@@ -8,7 +8,10 @@ public class DeathCollider : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.GetComponent<PlayerCheckpoint>().GoToLastCheckpoint();
+            Destroy(other.gameObject);
+            GameManager.instance.RespawnNewEgg();
+
+            //other.GetComponent<PlayerCheckpoint>().GoToLastCheckpoint();
         }
     }
 }

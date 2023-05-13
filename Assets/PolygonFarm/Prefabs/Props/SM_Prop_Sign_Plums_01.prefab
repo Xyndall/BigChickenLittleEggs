@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 4721892043323208}
   - component: {fileID: 33848331086838400}
   - component: {fileID: 23931218603071470}
-  - component: {fileID: 64482037363301302}
-  m_Layer: 0
+  - component: {fileID: 3220992827983959969}
+  m_Layer: 6
   m_Name: SM_Prop_Sign_Plums_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4721892043323208
 Transform:
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64482037363301302
-MeshCollider:
+--- !u!65 &3220992827983959969
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +94,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: a8a6ae27f9a47a046b455799f084344a, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.8686906, y: 0.34181032, z: 0.02408214}
+  m_Center: {x: -0.00000190676, y: 0.17090516, z: 0.012041563}

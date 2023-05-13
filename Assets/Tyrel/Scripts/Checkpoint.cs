@@ -16,6 +16,7 @@ public class Checkpoint : MonoBehaviour
             aSource.Play();   
             other.GetComponent<PlayerCheckpoint>().SetNewCheckpoint(gameObject);
             AlreadyEntered = true;
+            GameManager.instance.lastPlayerCheckpoint = this.gameObject;
         }
     }
 

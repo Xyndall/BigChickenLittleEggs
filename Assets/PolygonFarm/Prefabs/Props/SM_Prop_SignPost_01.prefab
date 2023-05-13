@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 4067475887121958}
   - component: {fileID: 33380474031958690}
   - component: {fileID: 23126644977564136}
-  - component: {fileID: 64498747624681124}
-  m_Layer: 0
+  - component: {fileID: 8607024071891996108}
+  m_Layer: 6
   m_Name: SM_Prop_SignPost_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &4067475887121958
 Transform:
@@ -84,8 +84,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &64498747624681124
-MeshCollider:
+--- !u!65 &8607024071891996108
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -94,7 +94,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 4b780a6cb6a59784ab832e212d08ebcc, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 1.145878, y: 0.537692, z: 0.29096988}
+  m_Center: {x: 0.079805724, y: 0.2462844, z: -0.021202581}
