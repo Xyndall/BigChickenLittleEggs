@@ -5,18 +5,20 @@ using UnityEngine;
 public class PlayerCheckpoint : MonoBehaviour
 {
     public GameObject LastCheckpoint;
-    public Transform playerPos;
 
     //gets called when player enters checkpoint trigger
     //sets last checkpoint to the new checkpoint trigger player touched
     public void SetNewCheckpoint(GameObject checkPoint)
     {
+        Debug.Log("Set new Checkpoint");
         LastCheckpoint = checkPoint;
     }
 
 
     public void GoToLastCheckpoint()
     {
+        Debug.Log("GoingToLastCheckpoint");
+
         gameObject.transform.position = LastCheckpoint.GetComponent<Checkpoint>().checkpointSpawn.position;
 
         // need to make player not carry velocity when resetting
