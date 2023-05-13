@@ -19,7 +19,9 @@ public class GameManager : MonoBehaviour
     [Header("GameStart")]
     [SerializeField] private GameObject mainCanvasBG;
     [SerializeField] private PlayableDirector mainCanvasDirector;
+    [SerializeField] private GameObject CinematicCamera;
     public bool gameStarted = false;
+    public bool TimelinePLaying = false;
 
     [Header("Pause")]
     [SerializeField] private GameObject pauseCanvas;
@@ -33,6 +35,8 @@ public class GameManager : MonoBehaviour
     public bool playerIsChicken;
     [SerializeField] private GameObject GameCanvas;
     [SerializeField] private GameObject musicPlayer;
+    [SerializeField] private GameObject PlayerCamera;
+
     
 
 
@@ -43,6 +47,7 @@ public class GameManager : MonoBehaviour
         pauseCanvas.SetActive(false);
         WinCanvas.SetActive(false);
         musicPlayer.SetActive(true);
+        CinematicCamera.SetActive(true);
     }
 
     // Update is called once per frame
@@ -70,8 +75,23 @@ public class GameManager : MonoBehaviour
             GameCanvas.SetActive(false);
         }
 
+        if (Input.GetKeyDown(KeyCode.E) && TimelinePLaying)
+        {
+            mainCanvasDirector.Stop();
+            TimelinePLaying = false;
+            PlayerCamera.SetActive(true);
+            playerIsChicken = true;
+            CinematicCamera.SetActive(false);
+
+        }
+
     }
 
+    public void SetBoolTimeline()
+    {
+        Debug.Log("Setting bool true");
+        TimelinePLaying = true;
+    }
 
     public void WinGame()
     {
