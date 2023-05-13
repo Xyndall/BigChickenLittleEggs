@@ -2454,6 +2454,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 50804274, guid: f0f3a383114cb0548a062b5b6ae03f89, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 50804279, guid: f0f3a383114cb0548a062b5b6ae03f89, type: 3}
       propertyPath: m_SceneBindings.Array.data[1].value
       value: 
@@ -57496,10 +57500,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 194989158, guid: ea1ea20077630674f8de74d1f132a020, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2351966021419155130, guid: ea1ea20077630674f8de74d1f132a020,
         type: 3}
       propertyPath: m_RootOrder
