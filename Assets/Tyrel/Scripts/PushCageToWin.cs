@@ -6,6 +6,7 @@ public class PushCageToWin : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
     [SerializeField] private GameObject helpText;
+    [SerializeField] private AudioSource aSource;
 
     private void Start()
     {
@@ -22,6 +23,7 @@ public class PushCageToWin : MonoBehaviour
             helpText.SetActive(false);
             rb.AddForce(Vector3.up * 10, ForceMode.Impulse);
             GameManager.instance.WinGame();
+            aSource.Play();
         }
     }
 }
