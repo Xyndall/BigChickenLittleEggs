@@ -9,6 +9,9 @@ public class playerController : MonoBehaviour
 
     public float jumpForce = 5f;
 
+    [SerializeField] Transform groundCheck;
+    [SerializeField] LayerMask ground;
+
     private float xInput;
     private float zInput;
 
@@ -35,10 +38,15 @@ public class playerController : MonoBehaviour
         xInput = Input.GetAxis("Horizontal");
         zInput = Input.GetAxis("Vertical");
 
-        if(Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetKeyDown(KeyCode.Space) && isGrounded())
         {
             _rb.AddForce (Vector3.up * jumpForce, ForceMode.Impulse);
         }
+    }
+
+    bool isGrounded()
+    {
+        return Physics.CheckSphere(groundCheck.position, .1f, ground);
     }
 
     private void Move()
