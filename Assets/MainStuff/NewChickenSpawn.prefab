@@ -597,7 +597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39e7bd7b265f7e6429d62e977174385f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 6530003696468720997, guid: af031e9f629c0f24088a27dc728dfb24, type: 3}
+  Player: {fileID: 3571019660630846617, guid: 687e7753f74e18e419ed4db3f7a1ac22, type: 3}
   playerSpawn: {fileID: 2010846177449063033}
   aSource: {fileID: -3751703310926587407}
   aclip:
@@ -605,6 +605,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 699f08985ea88414785cf81f3b7f272e, type: 3}
   timeRemaining: 10
   timerIsRunning: 0
+  checkpoint: {fileID: 0}
 --- !u!54 &3725439420329263650
 Rigidbody:
   m_ObjectHideFlags: 0

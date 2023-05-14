@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4854597157012512}
   - component: {fileID: 33266097517469986}
   - component: {fileID: 23160015666840954}
+  - component: {fileID: 5313622356592200894}
   m_Layer: 0
   m_Name: SM_Prop_Rubbish_Pile_01
   m_TagString: Untagged
@@ -83,3 +84,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5313622356592200894
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1635191381902896}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: ef17d80be04f8f840963d6927ab7859a, type: 3}

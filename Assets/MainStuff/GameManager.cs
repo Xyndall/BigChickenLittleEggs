@@ -91,7 +91,7 @@ public class GameManager : MonoBehaviour
 
     public void RespawnNewEgg()
     {
-        
+        Destroy(GameObject.FindGameObjectWithTag("Player"));
         GameObject newPlayer = Instantiate(Player, lastPlayerCheckpoint.GetComponent<Checkpoint>().checkpointSpawn.position, Quaternion.identity);
         newPlayer.GetComponent<PlayerCheckpoint>().LastCheckpoint = lastPlayerCheckpoint;
         GameManager.instance.playerIsChicken = false;

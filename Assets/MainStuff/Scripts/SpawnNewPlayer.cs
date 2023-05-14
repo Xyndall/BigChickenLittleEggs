@@ -19,6 +19,7 @@ public class SpawnNewPlayer : MonoBehaviour
     {
         timerIsRunning = true;
         aSource.PlayOneShot(aclip[0]);
+        
     }
 
 
@@ -54,5 +55,6 @@ public class SpawnNewPlayer : MonoBehaviour
         newPlayer.GetComponent<PlayerCheckpoint>().LastCheckpoint = this.checkpoint;
         GameManager.instance.playerIsChicken = false;
         this.gameObject.GetComponent<SpawnNewPlayer>().enabled = false;
+        Destroy(gameObject, 120);
     }
 }
